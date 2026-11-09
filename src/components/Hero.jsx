@@ -48,12 +48,14 @@ export function Hero({ isOpen, onOpen }) {
         </p>
       </div>
 
-      {/* 4. Couple Names with Prominent Capital 'A' in Ayushi & Sanket */}
-      <div className="relative z-10 flex flex-col items-center">
-        <h1 className="font-script text-6xl leading-none text-[#350812] sm:text-7xl md:text-8xl drop-shadow-[0_2px_12px_rgba(252,244,246,0.95)]">
-          <span className="font-['Alex_Brush'] text-[1.14em] inline-block -mr-1">A</span>yushi
-          <span className="mx-3 text-gold font-serif text-5xl sm:text-6xl">&amp;</span>
-          {couple.partnerB}
+      {/* 4. Couple Names on a SINGLE line with refined font size so it never breaks on mobile */}
+      <div className="relative z-10 flex flex-col items-center max-w-full px-2">
+        <h1 className="font-script text-[2.35rem] min-[380px]:text-[2.65rem] sm:text-6xl md:text-7xl lg:text-8xl leading-none text-[#350812] drop-shadow-[0_2px_12px_rgba(252,244,246,0.95)] whitespace-nowrap">
+          <span className="inline whitespace-nowrap">
+            <span className="font-['Alex_Brush'] text-[1.12em] inline -mr-0.5">A</span>yushi
+          </span>
+          <span className="mx-1.5 min-[380px]:mx-2 sm:mx-3 text-gold font-serif text-[0.85em]">&amp;</span>
+          <span className="inline whitespace-nowrap">{couple.partnerB}</span>
         </h1>
 
         <p className="mt-4 sm:mt-5 font-display text-2xl text-[#540d1e] md:text-3xl font-bold tracking-wide drop-shadow-[0_1px_6px_rgba(252,244,246,0.95)]">
