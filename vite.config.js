@@ -37,6 +37,9 @@ function socialMetaPlugin() {
 }
 
 export default defineConfig({
-  base: process.env.VITE_BASE_PATH || "/",
+  base: "./",
   plugins: [react(), tailwindcss(), socialMetaPlugin()],
+  build: {
+    emptyOutDir: true,
+  },
 });
