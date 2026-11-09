@@ -124,7 +124,7 @@ export const site = {
   },
   footer: {
     closing: "We cannot wait to celebrate with you.",
-    crafted: "Crafted with love by Avishkar for Ayushi Didi & Sanket Jija Ji",
+    crafted: "Crafted with ❤️ by Avishkar for Ayushi Didi & Sanket Jija Ji",
   },
 };
 
