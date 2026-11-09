@@ -1,12 +1,12 @@
 import streamlit as st
 import streamlit.components.v1 as components
-from pathlib import Path
 import os
+from pathlib import Path
 
 # Streamlit Page Configuration
 st.set_page_config(
     page_title="Wedding Invitation",
-    page_icon="favicon.svg" if os.path.exists("favicon.svg") else "💍",
+    page_icon="static/favicon.svg" if os.path.exists("static/favicon.svg") else "💍",
     layout="wide",
     initial_sidebar_state="collapsed",
 )
@@ -21,8 +21,9 @@ st.markdown("""
     .block-container {
         padding: 0 !important;
         margin: 0 !important;
-        max-width: 100% !important;
-        width: 100% !important;
+        max-width: 100vw !important;
+        width: 100vw !important;
+        height: 100vh !important;
     }
     iframe {
         position: fixed !important;
@@ -36,6 +37,20 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Primary: Streamlit native static serving via iframe (/app/static/index.html)
-# When enableStaticServing is true in .streamlit/config.toml, files in static/ are served directly
-components.iframe("/app/static/index.html")
+ROOT_DIR = Path(__file__).parent
+index_path = ROOT_DIR / "static" / "index.html"
+
+if index_path.exists():
+    with open(index_path, "r", encoding="utf-8") as f:
+        html_content = f.read()
+
+    # Ensure base tag points to /app/static/ so all relative scripts and stylesheets resolve
+    if "<head>" in html_content:
+        html_content = html_content.replace(
+            "<head>",
+            '<head>\n    <base href="/app/static/">\n    <style>html, body { height: 100%; margin: 0; padding: 0; }</style>'
+        )
+
+    components.html(html_content, height=1200, scrolling=True)
+else:
+    st.error("static/index.html not found.")
