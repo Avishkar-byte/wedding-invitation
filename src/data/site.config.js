@@ -42,7 +42,7 @@ export const site = {
     eyebrow: "A note from the Jaiswal family",
     heading: "Please celebrate with us",
     paragraphs: [
-      "With the divine blessings of Lord Shri Ganesh and our revered elders, Mr. Dinesh Kumar Jaiswal & Mrs. Rekha Jaiswal cordially invite you to grace the auspicious Wedding celebrations of their beloved daughter Ayushi with Sanket.",
+      "With the divine blessings of Lord Shri Ganesh and our revered elders, Mr. Umesh Kumar Jaiswal & Mrs. Madhu Jaiswal cordially invite you to grace the auspicious Wedding celebrations of their beloved niece Ayushi with Sanket.",
       "Your gracious presence, warmth, and blessings are the greatest gift as they embark upon their sacred journey of love and togetherness.",
     ],
     signOff: "With all our love & blessings,",
