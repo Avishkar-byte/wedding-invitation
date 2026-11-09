@@ -27,7 +27,7 @@ export function Footer() {
         </p>
 
         <p className="mt-4 font-display text-xs tracking-[0.25em] uppercase text-gold font-semibold">
-          WITH LOVE · THE JAISWAL &amp; SANKET FAMILIES
+          WITH LOVE · THE JAISWAL &amp; AGRAWAL FAMILIES
         </p>
 
         <p className="mt-2 font-display text-xs tracking-widest text-pink-200/75 uppercase font-medium">
