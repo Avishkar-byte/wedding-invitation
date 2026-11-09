@@ -34,15 +34,9 @@ export function Footer() {
           {couple.partnerA} &amp; {couple.partnerB} · 12 . 12 . 2026
         </p>
 
-        {/* Highlighted tribute */}
-        <div className="mt-8 inline-flex flex-wrap items-center justify-center gap-1.5 px-4 py-2 rounded-full bg-white/[0.08] border border-gold/40 shadow-[0_2px_12px_rgba(0,0,0,0.3)] text-xs sm:text-sm text-pink-100 font-medium tracking-wide">
-          <span>Crafted with</span>
-          <span className="text-red-400 inline-block animate-pulse text-sm sm:text-base" aria-label="love">❤️</span>
-          <span>by</span>
-          <span className="text-gold font-bold tracking-wider">Avishkar</span>
-          <span>for</span>
-          <span className="text-pink-200 font-semibold">Ayushi Didi &amp; Sanket Jija Ji</span>
-        </div>
+        <p className="mt-8 text-xs sm:text-sm text-pink-200/90 font-medium tracking-wide">
+          Crafted with love by <span className="text-gold font-semibold">Avishkar</span> for <span className="text-pink-100 font-semibold">Ayushi Didi &amp; Sanket Jija Ji</span>
+        </p>
       </div>
     </footer>
   );
