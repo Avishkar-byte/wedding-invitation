@@ -6,7 +6,7 @@ from pathlib import Path
 # Streamlit Page Configuration
 st.set_page_config(
     page_title="Wedding Invitation",
-    page_icon="static/favicon.svg" if os.path.exists("static/favicon.svg") else "💍",
+    page_icon="favicon.svg" if os.path.exists("favicon.svg") else "💍",
     layout="wide",
     initial_sidebar_state="collapsed",
 )
@@ -38,19 +38,11 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 ROOT_DIR = Path(__file__).parent
-index_path = ROOT_DIR / "static" / "index.html"
+standalone_path = ROOT_DIR / "standalone.html"
 
-if index_path.exists():
-    with open(index_path, "r", encoding="utf-8") as f:
+if standalone_path.exists():
+    with open(standalone_path, "r", encoding="utf-8") as f:
         html_content = f.read()
-
-    # Ensure base tag points to /app/static/ so all relative scripts and stylesheets resolve
-    if "<head>" in html_content:
-        html_content = html_content.replace(
-            "<head>",
-            '<head>\n    <base href="/app/static/">\n    <style>html, body { height: 100%; margin: 0; padding: 0; }</style>'
-        )
-
     components.html(html_content, height=1200, scrolling=True)
 else:
-    st.error("static/index.html not found.")
+    st.error("standalone.html not found.")
